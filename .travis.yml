@@ -6,6 +6,7 @@ python:
     - pypy
     - 3.3
     - 3.4
+    - 3.5
 before_install:
     - curl -L -o /tmp/0.5.2_linux_amd64.zip https://dl.bintray.com/mitchellh/consul/0.5.2_linux_amd64.zip
     - unzip /tmp/0.5.2_linux_amd64.zip
@@ -17,13 +18,3 @@ install:
 script: nosetests --with-coverage --cover-package=consulate --cover-branches
 after_success:
   - codecov
-deploy:
-  distributions: sdist bdist_wheel
-  provider: pypi
-  user: crad
-  on:
-    python: 2.7
-    tags: true
-    all_branches: true
-  password:
-    secure: "W3mHi2tzX34KcN82tdVPZwS0RHBGkI2Cy/df18ehsVKoOzWzQvaQKh2Jh1LIBOvdZCyih+KltmMNT8ounqUd+ql6kBFd0kotQk3C3x5R5KlpbhQ4BNKp++grs+iycPwK6qnJISypt2d3ykJNgqUgfBI0p+7XVpMkBY0GIXGNcvk="
